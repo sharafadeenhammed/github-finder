@@ -452,6 +452,17 @@ body{
     padding:5px
  }
 
+ .repo-link{
+    margin-left:10px;
+    color:rgba(255,255,255,0.8);
+    text-decoration: none;
+    border-radius: 5px;
+    padding:5px
+ }
+ .repo-link:hover{
+    background-color:rgba(255,255,255,0.2);
+ }
+
  .watchers-count-box{
     margin:auto 40px;
     padding:5px;

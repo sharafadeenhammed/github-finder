@@ -17,7 +17,7 @@ function Repos({repo}) {
     <li className="repo" >
         <div className="repo-name" >
         <FaLink/>
-        <span style={{marginLeft:"10px"}}>{repo.name}</span>
+        <a target="_blank" className="repo-link" href={html_url} rel="norefereer">{repo.name}</a>
         <p className="repo-description" >
             {description}
         </p>
