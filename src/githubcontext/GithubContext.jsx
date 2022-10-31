@@ -48,8 +48,10 @@ export function GithubContext({children}) {
         setText:setText,
         clearUsers:clearUsers     
         
-        }} >
+    }} >
+      
         {children}
+
     </Github.Provider>
   )
 }
