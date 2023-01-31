@@ -35,7 +35,7 @@ function ResaultItem({user}) {
 }
 
 ResaultItem.propTypes = {
-  user: PropTypes.isRequired
+  user: PropTypes.object.isRequired
 }
 
 

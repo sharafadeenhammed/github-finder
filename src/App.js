@@ -10,7 +10,6 @@ import User from "./components/User"
 import {GithubContext} from "./githubcontext/GithubContext"
  
 function App() {
-  // console.log(process.env.REACT_APP_GITHUB_URL);
   return (
     <GithubContext>
         <Router>
