@@ -17,7 +17,7 @@ function ResaultItem({user}) {
             onMouseLeave={() => setShowName(false)}
             className="name">
             {new String(user.login).substring(0, 8)}{new String(user.login).length > 8 ? "..." : ""}
-            {showName ? <h5 className="fulname">{user.login}</h5> : ""}
+            {showName ? <p className="fulname">{user.login}</p> : ""}
           </h3>
           
           </div>
