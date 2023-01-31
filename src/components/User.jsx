@@ -34,7 +34,6 @@ function User() {
       .then((res)=> res.json())
       .then((data)=> {
         setRepos(data)
-        console.log(data)
       })
     },[])
 
