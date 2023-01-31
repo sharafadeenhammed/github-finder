@@ -24,6 +24,23 @@ body {
 ul {
   list-style: none;
 }
+/* added to fromat name correctely */
+.name{
+  position: relative;
+}
+.fulname{
+  display:none;
+  position: absolute;
+  top:0px;
+  left:0px;
+  text-align: center;
+  height:100%;
+  width:100%;
+  border-radius:5px;
+  background-color: #ccc;
+  color:#333;
+  border:1px solid #333;
+}
 
 .container {
   max-width: 768px;

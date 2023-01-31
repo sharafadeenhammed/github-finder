@@ -1,16 +1,24 @@
 import {Link} from "react-router-dom"
 import PropTypes from "prop-types"
+import { useState } from "react"
 function ResaultItem({user}) {
-  
+  const [name, setName] = useState(false)  
 
   return (
     <div className=" user-box" key={user.id}>
+      
           <div className="user">
           <div>
             <img className="users-image" src={user.avatar_url} alt={user.login}/>
           </div>
-          <div className="user-data" >
-            <h3>{user.login}</h3>
+        <div className="user-data" >
+          <h3 onMouseEnter={() => {
+            console.log("show name...")
+            setName(true)
+          }} onMouseLeave={() => setName(false)} className="name">{new String(user.login).substring(0, 8)}{new String(user.login).length > 8 ? "..." : ""}
+            {name ? <h4 className="fulname">{user.login}</h4> : ""}
+          </h3>
+          
           </div>
           </div>
           <div className="user">

@@ -7,7 +7,7 @@ function UserResults() {
   return (
     <div className="user-list">
       {
-        users?.length > 0 ? users.map((user) => <ResaultItem user={user} />) :"Error Loading Users " 
+        users?.length > 0 ? users.map((user) => <ResaultItem user={user} />) :"" 
 
       }
     </div>

@@ -18,24 +18,37 @@ function User() {
 
     const [repos, setRepos] = useState([])
 
-    const {gitUrl} = useContext(Github)
+  const { gitUrl } = useContext(Github)
+  
+  // find user...
+  const fetchUser = async () => {
+    await fetch(`${gitUrl}/users/${params.user}`)
+            .then((res)=>res.json())
+            .then((json)=>setUser(json))
+            .catch((err)=> console.log(err))
+  }
+
+  // fetch repos...
+  const fetchRepos = async()=>{
+    await fetch(`${gitUrl}/users/${params.user}/repos`)
+    .then((res)=> res.json())
+    .then((data)=> {
+      setRepos(data)
+    })
+  }
 
     useEffect(()=>{
         setLoading(true)
-        fetch(`${gitUrl}/users/${params.user}`)
-        .then((res)=>res.json())
-        .then((json)=>setUser(json))
-        .catch((err)=> console.log(err))
+      fetchUser()
+      fetchRepos()
         setTimeout(()=>setLoading(false) ,500)
-    },[])
+    }, [])
+  
+ 
 
-    useEffect(async()=>{
-      await fetch(`${gitUrl}/users/${params.user}/repos`)
-      .then((res)=> res.json())
-      .then((data)=> {
-        setRepos(data)
-      })
-    },[])
+    // useEffect( , [])
+  
+ 
 
     const {
       name,
@@ -180,7 +193,7 @@ function User() {
 
 
          {
-          !loading && Object.keys(user).length == 0 ?<div style={{fontSize:"25px",textAlign:"center"}}>"Error Can't Load User !"</div> : ""
+          !loading && Object.keys(user).length == 0 ?<div style={{fontSize:"25px",textAlign:"center"}}>"Error Can't Load User Data!"</div> : ""
          }
     </div>
   )
